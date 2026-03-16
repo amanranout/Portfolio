@@ -673,11 +673,11 @@ inputs.forEach(input => {
 function updateSocialLinks() {
     // LinkedIn
     const linkedinLink = document.querySelector('.social-icon[title="LinkedIn"]');
-    if (linkedinLink) linkedinLink.href = 'https://linkedin.com/in/yourprofile';
+    if (linkedinLink) linkedinLink.href = 'https://www.linkedin.com/in/aman-kumar-47a86432a/';
 
     // GitHub
     const githubLink = document.querySelector('.social-icon[title="GitHub"]');
-    if (githubLink) githubLink.href = 'https://github.com/yourprofile';
+    if (githubLink) githubLink.href = 'https://github.com/amanranout';
 
     // Instagram
     const instagramLink = document.querySelector('.social-icon[title="Instagram"]');
