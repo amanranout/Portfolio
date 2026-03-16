@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Loader Animation -->
+    <div class="loader-wrapper" id="loaderWrapper">
+        <div class="loader"></div>
+        <p class="loader-text">Loading Portfolio...</p>
+    </div>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas3d"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Aman Kumar<span>.</span></a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="stars"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="greeting">Hi, I'm <span class="name-highlight">Aman Kumar</span></h1>
+                <div class="typing-container">
+                    <p class="typing-text">B.Tech CSE Student</p>
+                </div>
+                <p class="hero-description">Building Data Science solutions and participating in hackathons</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.open('assets/resume.pdf')">
+                        <i class="fas fa-download"></i> Download Resume
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="My Pic.jpeg" alt="Profile Picture" class="profile-img">
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-paragraph">
+                        I am a passionate B.Tech CSE 3rd year student with a strong interest in Data Science and analytics. 
+                        My academic journey has equipped me with solid fundamentals in computer science, while my practical 
+                        experience in hackathons and projects has sharpened my problem-solving skills.
+                    </p>
+                    <p class="about-paragraph">
+                        Currently, I'm diving deep into Data Science, learning advanced techniques in data manipulation, 
+                        analysis, and visualization. I'm proficient in Python, SQL, and tools like Tableau and Power BI. 
+                        My passion lies in extracting actionable insights from data and building real-world solutions that 
+                        make a difference.
+                    </p>
+                    <p class="about-paragraph">
+                        I actively participate in hackathons where I collaborate with talented individuals to innovate and 
+                        create solutions. I'm constantly learning, experimenting with new technologies, and working on projects 
+                        that push my boundaries. My goal is to become an expert in Analytics and Machine Learning, leveraging 
+                        data to solve complex real-world problems.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Projects </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">National Level Hackathons</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="10">0</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <!-- C++ -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-name">C++</h3>
+                    <p class="skill-description">Object-oriented programming and competitive coding</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="skill-name">Python</h3>
+                    <p class="skill-description">Data analysis, Machine Learning, and scripting</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 88%"></div>
+                    </div>
+                </div>
+
+                <!-- SQL -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-name">SQL</h3>
+                    <p class="skill-description">Database design and complex queries</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 78%"></div>
+                    </div>
+                </div>
+
+                <!--Html-->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                        </div>
+                    <h3 class="skill-name">HTML</h3>
+                    <p class="skill-description">Web development and markup language</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="skill-name">CSS</h3>
+                    <p class="skill-description">Styling and layout for web pages</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                    <!-- JavaScript -->
+                <div class="skill-card
+                    ">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <p class="skill-description">Interactive web development and scripting</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 60%"></div>
+                    </div>
+                </div>
+
+
+                <!-- Tableau -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3 class="skill-name">IOT</h3>
+                    <p class="skill-description">Smart cities, traffic & disaster response management</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                </div>
+
+                <!-- Power BI -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="skill-name">Power BI</h3>
+                    <p class="skill-description">Interactive reports and analytics</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 82%"></div>
+                    </div>
+                </div>
+
+                <!-- MS Office -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3 class="skill-name">MS Office</h3>
+                    <p class="skill-description">Excel, PowerPoint, and Word expertise</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 92%"></div>
+                    </div>
+                </div>
+
+                <!-- CyberSecurity & Cloud Computing -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 class="skill-name">CyberSecurity & CloudComputing </h3>
+                    <p class="skill-description">Hackthon projects and collaboration</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 57%"></div>
+                    </div>
+                </div>
+
+                <!-- GitHub -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="skill-name">GitHub</h3>
+                    <p class="skill-description">Repository management and teamwork</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 89%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 Done-->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Zmto-blkit Diff.png" alt="Sales Dashboard">
+                        <div class="project-overlay">
+                            <a href="https://github.com/amanranout/Zepto-Vs-Blinkit-Project-2-" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-btn" target="_blank">
+                                <i class="fas fa-link"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Zepto Vs Blinkit Sales Analysis Dashboard</h3>
+                        <p class="project-description">Created an interactive Power BI dashboard analyzing sales trends, revenue patterns, and customer segmentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 Done-->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="E-comm Sales dashboard.png" alt="COVID-19">
+                        <div class="project-overlay">
+                            <a href="https://github.com/amanranout/power-bi-Ecommerce-Sales-Dashboard-project" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-btn" target="_blank">
+                                <i class="fas fa-link"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ecommerce Sales Dashboard</h3>
+                        <p class="project-description">Analyzed Ecommerce Sales dataset using Python, Pandas, and Matplotlib to visualize pandemic trends and statistics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="DDOS.png" alt="DDOS Model">
+                        <div class="project-overlay">
+                            <a href="https://github.com/amanranout/KERNEL-PANIC" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-btn" target="_blank">
+                                <i class="fas fa-link"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">DDOS Attack Detection Firewall</h3>
+                        <p class="project-description">Collaborated with a team to develop an innovative solution under time constraints, showcasing rapid prototyping skills.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Firewall</span>
+                            <span class="tech-tag">Cyber Security</span>
+                            <span class="tech-tag">Cloud Computing</span>
+                            <span class="tech-tag">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 Done-->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="STM.png" alt="Database">
+                        <div class="project-overlay">
+                            <a href="https://github.com" class="project-btn" target="_blank">
+                                <i class="fas fa-phone"></i> cont. for more details 
+                            </a>
+                            <a href="#" class="project-btn" target="_blank">
+                                <i class="fas fa-link"></i> on working mode
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Smart Traffic Management System</h3>
+                        <p class="project-description">It helps reduce traffic congestion, improve road safety, and optimize signal timing in smart cities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">IOT</span>
+                            <span class="tech-tag">Drone</span>
+                            <span class="tech-tag">Sensors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="DCDBM.png" alt="Tableau">
+                        <div class="project-overlay">
+                            <a href="https://github.com" class="project-btn" target="_blank">
+                                <i class="fab fa-github"></i> UpComing 
+                            </a>
+                            <a href="#" class="project-btn" target="_blank">
+                                <i class="fas fa-link"></i> collaboration
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Overcoming Challenges in Drone-Based Disaster Management</h3>
+                        <p class="project-description">Overcoming challenges in drone-based disaster management helps improve rapid response and real-time monitoring in emergency situations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Sensors</span>
+                            <span class="tech-tag">Drone</span>
+                            <span class="tech-tag">Real-time Monitoring</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="more.jfif" alt="Hackathon">
+                        <div class="project-overlay">
+                            <a href="" class="project-btn" target="_blank">
+                                <i class="fas fa-phone"></i> Contact me
+                            </a>
+                            <a href="#" class="project-btn" target="_blank">
+                                <i class="fab fa-linkedin-in"></i> More projects
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">4+ Hackathon & 10+ Data Analytics Projects</h3>
+                        <p class="project-description">PowerBi , Cyber Security , Python , HTML , CSS , JS , IOT more....</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Firewall</span>
+                            <span class="tech-tag">Cyber Security</span>
+                            <span class="tech-tag">Cloud Computing</span>
+                            <span class="tech-tag">Problem Solving</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Internet of Things</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">You can contact me by filling this form for any queries or collaboration opportunities.</p>
+            
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="name" 
+                                placeholder="Your Name" 
+                                required 
+                                class="form-input"
+                            >
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder="Your Email" 
+                                required 
+                                class="form-input"
+                            >
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                placeholder="Subject" 
+                                required 
+                                class="form-input"
+                            >
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea 
+                                id="message" 
+                                placeholder="Your Message" 
+                                rows="5" 
+                                required 
+                                class="form-input"
+                            ></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Thank you! Your message has been sent successfully.</span>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:amanranout53@gmail.com">amanranout53@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Phone</h4>
+                            <p>+91 6230493580</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Location</h4>
+                            <p>Hamirpur (H.P) IN</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <h4 class="social-title">Follow Me</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/aman-kumar-47a86432a/" target="_blank" class="social-icon" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/amanranout" target="_blank" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Aman Kumar | Designed & Developed by Aman Kumar</p>
+                <p>Email: <a href="mailto:amanranout53@gmail.com">amanranout53@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Parallax Background Element -->
+    <div class="parallax-bg"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
