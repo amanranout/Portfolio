@@ -724,6 +724,6 @@ console.log(
     'color: #8b5cf6; font-size: 14px;'
 );
 console.log(
-    '%c 🚀 B.Tech CSE | Data Science | Hackathon Enthusiast | Web Developers',
+    '%c 🚀 B.Tech CSE | Data Science | Hackathon Enthusiast ',
     'color: #10b981; font-size: 12px;'
 );
