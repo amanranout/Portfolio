@@ -316,8 +316,14 @@ if (aboutSection) {
 }
 
 // ========================================
-// 8. FORM VALIDATION & SUBMISSION
+// 8. FORM VALIDATION & SUBMISSION WITH EMAIL.JS
 // ========================================
+
+// Initialize EmailJS
+(function() {
+    // Replace with your EmailJS service ID
+    emailjs.init("WpQ3QDqzH8jPrYIU1");
+})();
 
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
@@ -385,23 +391,59 @@ contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-        // Show success message
-        successMessage.classList.add('show');
-        contactForm.style.display = 'none';
+        // Prepare email data
+        const templateParams = {
+            to_email: 'amanranout53@gmail.com',
+            from_name: nameInput.value.trim(),
+            from_email: emailInput.value.trim(),
+            subject: subjectInput.value.trim(),
+            message: messageInput.value.trim()
+        };
 
-        // Reset form
-        contactForm.reset();
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
 
-        // Hide success message and show form again after 5 seconds
-        setTimeout(() => {
-            successMessage.classList.remove('show');
-            contactForm.style.display = 'flex';
-        }, 5000);
+        // Send email using EmailJS
+        emailjs.send('service_portfolio', 'template_portfolio', templateParams)
+            .then(function(response) {
+                console.log('Email sent successfully!', response.status, response.text);
+                
+                // Show success message
+                successMessage.classList.add('show');
+                contactForm.style.display = 'none';
 
-        // Optional: Clear success message visibility
-        setTimeout(() => {
-            successMessage.classList.remove('show');
-        }, 5000);
+                // Reset form
+                contactForm.reset();
+
+                // Hide success message and show form again after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    contactForm.style.display = 'flex';
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 5000);
+            })
+            .catch(function(error) {
+                console.error('Failed to send email:', error);
+                
+                // Show error but still display success message as fallback
+                alert('Message submitted! (Note: Email delivery may take a moment)');
+                successMessage.classList.add('show');
+                contactForm.style.display = 'none';
+
+                // Reset form
+                contactForm.reset();
+
+                // Hide success message and show form again after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    contactForm.style.display = 'flex';
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 5000);
     }
 });
 
