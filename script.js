@@ -444,6 +444,7 @@ contactForm.addEventListener('submit', (e) => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 }, 5000);
+            });
     }
 });
 
