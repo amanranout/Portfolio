@@ -674,11 +674,15 @@
             
             <div class="contact-content">
                 <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/ajax/amanranout53@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New portfolio query">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <input 
                                 type="text" 
-                                id="name" 
+                                id="name"
+                                name="name"
                                 placeholder="Your Name" 
                                 required 
                                 class="form-input"
@@ -689,7 +693,8 @@
                         <div class="form-group">
                             <input 
                                 type="email" 
-                                id="email" 
+                                id="email"
+                                name="email"
                                 placeholder="Your Email" 
                                 required 
                                 class="form-input"
@@ -700,7 +705,8 @@
                         <div class="form-group">
                             <input 
                                 type="text" 
-                                id="subject" 
+                                id="subject"
+                                name="subject"
                                 placeholder="Subject" 
                                 required 
                                 class="form-input"
@@ -710,7 +716,8 @@
 
                         <div class="form-group">
                             <textarea 
-                                id="message" 
+                                id="message"
+                                name="message"
                                 placeholder="Your Message" 
                                 rows="5" 
                                 required 
@@ -806,9 +813,6 @@
     <!-- Parallax Background Element -->
     <div class="parallax-bg"></div>
 
-    <!-- Email.js Library -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
-    
     <!-- Scripts -->
     <script src="script.js"></script>
 </body>
