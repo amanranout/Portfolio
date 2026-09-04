@@ -656,8 +656,8 @@ body {
 }
 
 .about-stats {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -1021,8 +1021,38 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 40px;
+    align-items: stretch;
+}
+
+.project-group + .project-group {
+    margin-top: 90px;
+}
+
+.project-group-heading {
+    max-width: 680px;
+    margin-bottom: 32px;
+}
+
+.project-group-kicker,
+.project-status {
+    color: var(--accent-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.project-group-heading h3 {
+    margin: 6px 0 8px;
+    font-size: 30px;
+    color: var(--text-light);
+}
+
+.project-group-heading p {
+    color: var(--text-muted);
+    font-size: 15px;
 }
 
 .project-card {
@@ -1036,6 +1066,8 @@ body {
     height: 100%;
     transform-style: preserve-3d;
     box-shadow: 0 10px 40px rgba(168, 85, 247, 0.08);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:nth-child(1) { animation-delay: 0s; }
@@ -1056,7 +1088,37 @@ body {
     position: relative;
     overflow: hidden;
     height: 280px;
+    flex-shrink: 0;
 }
+
+.project-image--icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.92);
+    background: linear-gradient(135deg, #12334a, #145d68 55%, #2b1e56);
+}
+
+.project-image--icon i {
+    font-size: 64px;
+    color: #fbbf24;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.project-image--icon span {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-image--security { background: linear-gradient(135deg, #182848, #4b1f4f); }
+.project-image--ar { background: linear-gradient(135deg, #0b4f6c, #126e82); }
+.project-image--language { background: linear-gradient(135deg, #4b2a63, #1d3b67); }
+.project-image--aqi { background: linear-gradient(135deg, #155e63, #386641); }
+.project-image--voting { background: linear-gradient(135deg, #273b73, #6b3d5c); }
 
 .project-image img {
     width: 100%;
@@ -1111,6 +1173,16 @@ body {
 
 .project-content {
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-status {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--gold-color);
+    letter-spacing: 0.08em;
 }
 
 .project-title {
@@ -1131,6 +1203,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
 }
 
 .tech-tag {
@@ -1827,6 +1901,10 @@ textarea.form-input {
 @media (max-width: 480px) {
     body {
         padding-top: 60px;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
     }
 
     .nav-container {
