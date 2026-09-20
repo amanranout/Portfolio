@@ -646,6 +646,45 @@ body {
     align-items: center;
 }
 
+.about-text {
+    position: relative;
+    padding: 34px 36px 30px;
+    border: 1px solid rgba(6, 182, 212, 0.22);
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(15, 23, 41, 0.92), rgba(15, 23, 41, 0.52));
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.about-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-color), var(--primary-color));
+}
+
+.about-kicker,
+.position-index {
+    display: block;
+    color: var(--accent-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.about-lede {
+    max-width: 600px;
+    margin: 14px 0 24px;
+    color: var(--text-light);
+    font-size: clamp(25px, 3vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
 .about-paragraph {
     font-size: 16px;
     color: var(--text-muted);
@@ -653,6 +692,29 @@ body {
     margin-bottom: 20px;
     text-align: justify;
     animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.about-focus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+.about-focus span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.about-focus i {
+    color: var(--gold-color);
 }
 
 .about-stats {
@@ -1232,6 +1294,14 @@ body {
     background: linear-gradient(180deg, rgba(6, 182, 212, 0.04), rgba(10, 14, 30, 0.2));
 }
 
+.positions-subtitle {
+    max-width: 680px;
+    margin: -34px auto 42px;
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 15px;
+}
+
 .positions-timeline {
     display: flex;
     flex-direction: column;
@@ -1287,6 +1357,29 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.position-index {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 9px;
+    color: var(--gold-color);
+    font-size: 10px;
+}
+
+.position-card:nth-child(even) .position-content {
+    border-left-color: var(--accent-color);
+    background: linear-gradient(105deg, rgba(6, 182, 212, 0.11), rgba(15, 23, 41, 0.92) 34%);
+}
+
+.position-card:nth-child(3n) .position-content {
+    border-left-color: var(--primary-color);
+    background: linear-gradient(105deg, rgba(168, 85, 247, 0.11), rgba(15, 23, 41, 0.92) 34%);
+}
+
+.position-card:hover .position-marker {
+    transform: rotate(45deg) scale(1.08);
+    background: var(--accent-color);
 }
 
 .position-content::before {
@@ -1977,4 +2070,164 @@ textarea.form-input {
 
 .scroll-animate.visible {
     animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Refined internship career log */
+.positions {
+    background: linear-gradient(180deg, rgba(6, 182, 212, 0.025), transparent 38%, rgba(168, 85, 247, 0.035));
+}
+
+.positions-timeline {
+    position: relative;
+    gap: 16px;
+    max-width: 940px;
+    padding: 18px 0 18px 34px;
+}
+
+.positions-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 9px;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.7) 12%, rgba(148, 163, 184, 0.2) 88%, transparent);
+}
+
+.position-card {
+    animation: none;
+}
+
+.position-marker {
+    left: -34px;
+    top: 28px;
+    width: 18px;
+    height: 18px;
+    border: 4px solid var(--dark-bg);
+    border-radius: 50%;
+    background: var(--accent-color);
+    box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.55), 0 0 18px rgba(6, 182, 212, 0.35);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.position-content,
+.position-card:nth-child(even) .position-content,
+.position-card:nth-child(3n) .position-content {
+    padding: 24px 28px 24px 30px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-left: 1px solid rgba(6, 182, 212, 0.42);
+    border-radius: 14px;
+    background: rgba(15, 23, 41, 0.78);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.position-content::before {
+    background: linear-gradient(100deg, rgba(6, 182, 212, 0.07), transparent 42%);
+    opacity: 1;
+}
+
+.position-card:hover .position-content {
+    transform: translateX(7px);
+    border-color: rgba(6, 182, 212, 0.48);
+    background: rgba(18, 31, 49, 0.9);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24), 0 0 24px rgba(6, 182, 212, 0.07);
+}
+
+.position-card:hover .position-marker {
+    transform: scale(1.25);
+    background: var(--gold-color);
+    box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.7), 0 0 18px rgba(251, 191, 36, 0.35);
+}
+
+.position-index {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+}
+
+.position-title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+}
+
+.position-company {
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.position-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 12px 0 10px;
+    color: var(--gold-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.position-description {
+    max-width: 760px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.position-tags {
+    gap: 8px;
+    margin-top: 17px;
+}
+
+.position-tags .tag {
+    padding: 6px 10px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 999px;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.035);
+    font-size: 11px;
+}
+
+.position-tags .tag:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    color: var(--text-light);
+    background: rgba(6, 182, 212, 0.08);
+}
+
+@media (max-width: 768px) {
+    .positions-subtitle {
+        margin-top: -20px;
+        margin-bottom: 28px;
+        padding: 0 12px;
+    }
+
+    .positions-timeline {
+        padding-left: 24px;
+    }
+
+    .positions-timeline::before {
+        left: 5px;
+    }
+
+    .position-marker {
+        left: -24px;
+        top: 24px;
+    }
+
+    .position-content,
+    .position-card:nth-child(even) .position-content,
+    .position-card:nth-child(3n) .position-content {
+        padding: 21px 18px;
+    }
+
+    .position-card:hover .position-content {
+        transform: translateY(-3px);
+    }
+
+    .position-title {
+        font-size: 19px;
+    }
 }
